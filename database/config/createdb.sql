@@ -1,21 +1,21 @@
 CREATE USER 'readonly'@'%' IDENTIFIED BY 'password';
-grant select on * . * to 'readonly'@'%';
-flush privileges;
+GRANT SELECT ON * . * TO 'readonly'@'%';
+FLUSH PRIVILEGES;
 
-create database if not exists telephone_dictionary;
-use telephone_dictionary;
-create table if not exists dialing_code (
+CREATE DATABASE IF NOT EXISTS telephone_dictionary;
+USE telephone_dictionary;
+CREATE TABLE IF NOT EXISTS dialing_code (
 	country_number int(6) auto_increment primary key,
 	country_name varchar(40) not null unique,
 	dialing_code varchar(6) not null unique
 );
 
-insert into dialing_code(country_name, dialing_code) 
-values("Australia", "+61");
-insert into dialing_code(country_name, dialing_code) 
-values("Brazil", "+55");
-insert into dialing_code(country_name, dialing_code) 
-values("Germany", "+49");
-insert into dialing_code(country_name, dialing_code) 
-values("India", "+91");
-commit;
+INSERT INTO dialing_code(country_name, dialing_code) 
+VALUES("Australia", "+61");
+INSERT INTO dialing_code(country_name, dialing_code) 
+VALUES("Brazil", "+55");
+INSERT INTO dialing_code(country_name, dialing_code) 
+VALUES("Germany", "+49");
+INSERT INTO dialing_code(country_name, dialing_code) 
+VALUES("India", "+91");
+COMMIT;
