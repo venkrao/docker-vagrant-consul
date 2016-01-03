@@ -19,10 +19,12 @@ $u = "readonly";
 $p = "password";
 $db = "telephone_dictionary";
 
+$ip = gethostbyname ( $h );
+
 $mysqli = new mysqli($h, $u, $p, $db);
 
 if(!$mysqli->connect_errno) {
-printf('<h3>Connected to database on <b>%s</b>, service discovered by <a href="%s">Consul by Hashicorp</a></h3>', $h, "https://www.consul.io/");
+printf('<h3>Fetched from the DB on <b>%s(%s)</b>, service discovered by <a href="%s">Consul by Hashicorp</a></h3>', $h, $ip, "https://www.consul.io/");
 } else {
 printf('<h3>DB service discovery failed. Cannot connect database on <b>%s</b>', $h);
 goto eerr;
@@ -49,5 +51,5 @@ if ($stmt = $mysqli->prepare("SELECT country_name, dialing_code from dialing_cod
 eerr:
 ?>
 </div>
-<body>
+</body>
 </html>

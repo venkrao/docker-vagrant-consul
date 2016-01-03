@@ -1,1 +1,0 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/veraoks/demo/webapp","disabled":false},"/opt/webapp":{"guestpath":"/opt/webapp","hostpath":"C:/Users/veraoks/demo/webapp/webapp","disabled":false},"/opt/scripts":{"guestpath":"/opt/scripts","hostpath":"C:/Users/veraoks/demo/scripts","disabled":false}}}
